@@ -18,4 +18,10 @@ public class APTTypeParameter implements ITypeParameter {
 		return this.element.getSimpleName().toString();
 	}
 
+	@Override
+	public String getFullname() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

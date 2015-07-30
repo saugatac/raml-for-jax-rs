@@ -18,4 +18,10 @@ public class ReflectionTypeParameter implements ITypeParameter {
 		return element.getName();
 	}
 
+	@Override
+	public String getFullname() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

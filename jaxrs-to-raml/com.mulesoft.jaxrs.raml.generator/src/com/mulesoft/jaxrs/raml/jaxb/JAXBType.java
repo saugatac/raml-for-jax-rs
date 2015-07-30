@@ -106,7 +106,7 @@ public class JAXBType extends JAXBModelElement {
 									||m.hasAnnotation(XmlElement.class.getSimpleName())
 									||m.hasAnnotation(XmlAttribute.class.getSimpleName())
 									||m.hasAnnotation(XmlAnyAttribute.class.getSimpleName())){
-								properties.add(createProperty(methodName, m,setter, model));
+								properties.add(createProperty(uncapitalize(methodName), m,setter, model));
 							}
 						}
 					}
@@ -267,5 +267,9 @@ public class JAXBType extends JAXBModelElement {
 		ArrayList<JAXBProperty> result = new ArrayList<JAXBProperty>(map.values());
 		return result;
 	}
+    public static String uncapitalize(String word)
+    {
+        return word.substring(0, 1).toLowerCase() + word.substring(1);
+    }
 
 }

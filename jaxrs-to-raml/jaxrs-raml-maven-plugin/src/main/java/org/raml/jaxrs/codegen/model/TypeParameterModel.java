@@ -5,6 +5,7 @@ import com.mulesoft.jaxrs.raml.annotation.model.ITypeParameter;
 public class TypeParameterModel implements ITypeParameter{
 	
 	protected String name;
+	protected String fullname;
 
 	public String getName() {
 		return name;
@@ -14,4 +15,13 @@ public class TypeParameterModel implements ITypeParameter{
 		this.name = name;
 	}
 
+	public String getFullname() {
+		return fullname;
+	}
+
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
+
+	
 }

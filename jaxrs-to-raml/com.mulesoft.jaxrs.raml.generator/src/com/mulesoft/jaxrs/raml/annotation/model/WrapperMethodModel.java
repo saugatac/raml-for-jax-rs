@@ -150,4 +150,10 @@ public class WrapperMethodModel implements IMethodModel{
 		}
 		return this.originalMethod;
 	}
+
+	public ITypeModel getOwnerType() {
+		return ownerType;
+	}
+
+	
 }

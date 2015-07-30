@@ -24,6 +24,7 @@ public class ReflectionType extends ReflectionGenericElement<Class<?>> implement
 	 */
 	public ReflectionType(Class<?> element) {
 		super(element);
+//		System.out.println("Checking class:"+element.getName());
 	
 	}
 
@@ -34,7 +35,7 @@ public class ReflectionType extends ReflectionGenericElement<Class<?>> implement
 	 * @return an array of {@link com.mulesoft.jaxrs.raml.annotation.model.IMethodModel} objects.
 	 */
 	public IMethodModel[] getMethods() {
-		Method[] declaredMethods = element.getDeclaredMethods();
+		Method[] declaredMethods = element.getMethods();
 		IMethodModel[] methods=new IMethodModel[declaredMethods.length];
 		int a=0;
 		for (Method m:declaredMethods){

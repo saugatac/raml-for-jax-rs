@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -239,7 +238,7 @@ public abstract class ResourceVisitor {
 
 	}
 
-	private IMethodModel[] extractmethods(ITypeModel t) {
+	private IMethodModel[] extractmethods(final ITypeModel t) {
 		
 		final LinkedHashMap<String,IMethodModel> map = new LinkedHashMap<String,IMethodModel>();
 		
@@ -247,6 +246,7 @@ public abstract class ResourceVisitor {
 			
 			@Override
 			boolean checkMethod(IMethodModel method) {
+				t.getClass();
 				String key = getKey(method);
 				if(!map.containsKey(key)){
 					map.put(key, method);
@@ -263,7 +263,7 @@ public abstract class ResourceVisitor {
 			}
 			@Override
 			protected boolean visitInterfaces() {
-				return false;
+				return true;
 			}
 		}.visit(t, null);
 		IMethodModel[] result = map.values().toArray(new IMethodModel[map.size()]);
@@ -656,6 +656,13 @@ public abstract class ResourceVisitor {
 			if(produces!=null){
 				
 				String returnTypeName = rm.getReturnTypeName();
+				if(returnTypeName == null && m.hasGenericReturnType() && m instanceof WrapperMethodModel ){
+					WrapperMethodModel wm = (WrapperMethodModel)m;
+					if(wm.getOwnerType() !=null && wm.getOwnerType().getTypeParameters()!=null && wm.getOwnerType().getTypeParameters().size()==1)
+						returnTypeName = firstLetterToLowerCase(wm.getOwnerType().getTypeParameters().get(0).getName());
+				}
+					
+//				System.out.println("Return Type:"+returnTypeName);
 				for (String mediaType : producesValues) {
 					mediaType = sanitizeMediaType(mediaType);
 					MimeType mimeType = new MimeType();

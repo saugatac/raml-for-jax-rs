@@ -5,11 +5,11 @@
     <artifactId>raml-jaxrs-codegen-parent</artifactId>
     <packaging>pom</packaging>
     <name>RAML JAX-RS Codegen</name>
-<version>1.3.4-SNAPSHOT</version>
+<version>1.3.4-custom</version>
     <modules>
         <module>core</module>
         <module>maven-plugin</module>
-        <module>gradle-plugin</module>
+        <!--module>gradle-plugin</module-->
     </modules>
  <distributionManagement>
        <repository>

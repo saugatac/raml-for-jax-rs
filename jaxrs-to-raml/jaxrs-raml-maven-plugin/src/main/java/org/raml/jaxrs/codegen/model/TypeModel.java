@@ -121,7 +121,7 @@ public class TypeModel extends GenericElementModel implements ITypeModel{
 	}
 
 	/** {@inheritDoc} */
-	@Override
+//	@Override
 	public IFieldModel[] getFields() {
 		return fields.values().toArray(new IFieldModel[fields.size()]);
 	}
@@ -135,12 +135,12 @@ public class TypeModel extends GenericElementModel implements ITypeModel{
 		fields.put(fieldModel.getName(),fieldModel);
 	}
 
-	@Override
+//	@Override
 	public ITypeModel getSuperClass() {
 		return this.superClass;
 	}
 
-	@Override
+//	@Override
 	public ITypeModel[] getImplementedInterfaces() {
 		return this.implementedIntefaces;
 	}
@@ -153,7 +153,7 @@ public class TypeModel extends GenericElementModel implements ITypeModel{
 		this.implementedIntefaces = implementedIntefaces;
 	}
 
-	@Override
+//	@Override
 	public ITypeModel resolveClass(String qualifiedName) {
 		ITypeModel result = this.registry.getType(qualifiedName);
 		if(result==null){

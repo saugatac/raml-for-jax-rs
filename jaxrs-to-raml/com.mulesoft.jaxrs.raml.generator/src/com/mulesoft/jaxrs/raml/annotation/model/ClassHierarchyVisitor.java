@@ -6,10 +6,11 @@ import java.util.HashSet;
 public abstract class ClassHierarchyVisitor {
 	
 	public void visit(ITypeModel type, IMethodModel method){
-		
+//		System.out.println("Visiting:"+type.getFullyQualifiedName());
 		HashSet<String> iSet = new HashSet<String>();
 		ArrayList<ITypeModel> iList = new ArrayList<ITypeModel>();
 		for(ITypeModel t = type; t!=null ; t = t.getSuperClass()){
+//			System.out.println("t:"+t.getFullyQualifiedName());
 			
 			if(method!=null?processType(t,method):processType(t)){
 				return;

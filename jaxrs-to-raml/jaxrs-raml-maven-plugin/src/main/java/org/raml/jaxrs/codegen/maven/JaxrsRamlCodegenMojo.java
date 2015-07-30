@@ -153,6 +153,7 @@ public class JaxrsRamlCodegenMojo extends AbstractMojo {
 
 		ResourceVisitor rv = new RuntimeResourceVisitor(outputFile, classLoader, config);
 		for(ITypeModel type : spoonProcessor.getRegistry().getTargetTypes()){
+//			System.out.println("Visiting:"+type.getFullyQualifiedName());
 			rv.visit(type);
 		}
 		
