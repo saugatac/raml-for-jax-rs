@@ -61,7 +61,7 @@ You must include the plug-in in your project's pom.xml. For example:
 
 ```xml
 <plugin>
-    <groupId>org.raml.plugins</groupId>
+    <groupId>pvt.raml-pg.plugins</groupId>
     <artifactId>raml-jaxrs-maven-plugin</artifactId>
     <version>1.0-SNAPSHOT</version>
     <configuration>
@@ -132,7 +132,7 @@ You must include the plug-in in your project's pom.xml. For example, add the fol
 
 ```xml
 <plugin>
-	<groupId>org.raml.plugins</groupId>
+	<groupId>pvt.raml-pg.plugins</groupId>
 	<artifactId>jaxrs-raml-maven-plugin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<configuration>
@@ -182,7 +182,7 @@ Create it if you do not already have one and add the following child element to 
 ``` xml
 <pluginExecution>
 	<pluginExecutionFilter>
-		<groupId>org.raml.plugins</groupId>
+		<groupId>pvt.raml-pg.plugins</groupId>
 		<artifactId>jaxrs-raml-maven-plugin</artifactId>
 		<versionRange>0.0.1-SNAPSHOT</versionRange>
 		<goals>

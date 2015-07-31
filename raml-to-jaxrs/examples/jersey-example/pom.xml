@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.raml</groupId>
+		<groupId>pvt.raml-pg</groupId>
 		<artifactId>raml-jaxrs-codegen-parent</artifactId>
 <version>1.3.4-custom</version>
 		<relativePath>../../</relativePath>
@@ -66,7 +66,7 @@
 				</plugin>
 			
 			<plugin>
-				<groupId>org.raml.plugins</groupId>
+				<groupId>pvt.raml-pg.plugins</groupId>
 				<artifactId>raml-jaxrs-maven-plugin</artifactId>
 				<version>${project.version}</version>
 				<configuration>

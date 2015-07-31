@@ -4,7 +4,7 @@
 
   <parent>
     <relativePath>../../eclipse/pom.xml</relativePath>
-    <groupId>org.raml</groupId>
+    <groupId>pvt.raml-pg</groupId>
     <artifactId>parent</artifactId>
 <version>1.3.4-custom</version>
   </parent>
